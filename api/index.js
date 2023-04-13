@@ -6,6 +6,8 @@ import usersRoute from "./routes/users.js"
 import hotelsRoute from "./routes/hotels.js"
 import roomsRoute from "./routes/rooms.js"
 import cookieParser from "cookie-parser"
+const router = express.Router()
+import ServerlessHttp from "serverless-http"
 import cors from "cors"
 
 const app = express()
@@ -57,3 +59,6 @@ app.listen(8800,()=>{
     connect()
     console.log('server started successfully at port 8800')
 });
+
+// app.use('/.netlify/functions/api', router);
+// module.exports.handler = ServerlessHttp(app)
